@@ -47,7 +47,7 @@ body textarea:required:valid
 		left: 0
 		background-color: #414e5b
 		opacity: .6
-		+mt(.3s)
+		+mt(.5s)
 	.table
 		z-index: 2
 		position: relative
@@ -74,6 +74,8 @@ body textarea:required:valid
 		right: 6px
 
 .s-profile
+	h2
+		text-align: left
 	.button
 		margin-top: 35px
 		width: 100%
@@ -86,6 +88,122 @@ body textarea:required:valid
 	i
 		padding-right: 4px
 
+.home-gallery-wrap > a,
+.certificate-wrap > a
+	display: none
+	&:first-child
+		display: block
+
+//Magnific-Popup Customize
+
+.mfp-ready .mfp-figure
+	opacity: 0
+.mfp-zoom-in
+	.mfp-figure, .mfp-iframe-holder .mfp-iframe-scaler
+		opacity: 0
+		transition: all 0.3s ease-out
+		transform: scale(0.95)
+	&.mfp-bg, .mfp-preloader
+		opacity: 0
+		transition: all 0.3s ease-out
+	&.mfp-image-loaded .mfp-figure
+		opacity: 1
+		transform: scale(1)
+	&.mfp-ready
+		.mfp-iframe-holder .mfp-iframe-scaler
+			opacity: 1
+			transform: scale(1)
+		&.mfp-bg, .mfp-preloader
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-figure, .mfp-iframe-holder .mfp-iframe-scaler
+			transform: scale(0.95)
+			opacity: 0
+		&.mfp-bg, .mfp-preloader
+			opacity: 0
+
+.mfp-iframe-scaler
+	overflow: visible
+.mfp-zoom-out-cur
+	cursor: auto
+	.mfp-image-holder .mfp-close
+		cursor: pointer
+.mfp-preloader
+	width: 30px!important
+	height: 30px!important
+	background-color: $accent
+	opacity: 1
+	margin: 0 auto
+	animation: rotateplane 1.2s infinite ease-in-out
+@-webkit-keyframes rotateplane
+	0%
+		-webkit-transform: perspective(120px)
+	50%
+		-webkit-transform: perspective(120px) rotateY(180deg)
+	100%
+		-webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+@keyframes rotateplane
+	0%
+		transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+	50%
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+	100%
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)
+
+
+.item-vertical
+	svg
+		width: 74px
+		height: auto
+	path
+		fill: #555
+		+mt(.5s)
+	&:hover
+		.button
+			background-color: $accent
+			box-shadow: 0 4px 0 darken($accent, 6%)
+			color: #fff
+			&:active, &:focus
+				background-color: darken($accent, 6%)
+				box-shadow: 0 4px 0 darken($accent, 6%)
+		path	
+			fill: $accent!important
+		h3
+			&::before
+				background-color: $accent
+				width: 30%
+				margin-left: -15%
+
+	h3
+		margin-top: 30px
+		position: relative
+		padding-bottom: 15px
+		&::before
+			content: ''
+			position: absolute
+			bottom: 0
+			height: 1px
+			width: 15%
+			left: 50%
+			margin-left: -7.5%
+			background-color: #d0d0d0
+			+mt(.5s)
+	p
+		font-size: em(14px)
+		color: #666
+		padding: 0 15px
+		margin-top: 25px
+		margin-bottom: 35px
+		min-height: 90px
+
+	margin-top: 80px
+	text-align: center
+	path
+		fill: #555!important
+		&:cover
+			fill: $accent!important
+
+
 	
 
 
@@ -95,3 +213,4 @@ body textarea:required:valid
 //Load Libs SASS
 @import app/libs/animate/animate.sass
 @import app/libs/font-awesome/css/font-awesome.sass
+@import app/libs/Magnific-Popup/magnific-popup.sass
