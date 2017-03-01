@@ -301,7 +301,32 @@ body textarea:required:valid
 		opacity: 0
 
 
-	
+*
+	transition: filter .25s ease
+.mfp-wrap ~ *
+	filter: blur(5px)
+
+.carousel-item
+	box-shadow: $accent 0 0 0 5px inset
+
+	&:hover
+		.car-img-wrap
+			svg
+				path
+					fill: $accent !important
+					opacity: 1
+	.car-img-wrap
+		position: relative
+		svg
+			position: absolute
+			max-height: 50px
+			left: 0
+			top: 25px
+			path
+				opacity: .8
+				+mt(.25s)
+				fill: #fff !important
+				
 
 
 //ALWAYS END
