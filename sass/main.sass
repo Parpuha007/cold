@@ -1,5 +1,6 @@
 @import bourbon
 @import vars.sass
+@import "app/libs/owl-carousel/assets/owl.carousel.sass"
 
 *::-webkit-input-placeholder
 	color: #666
@@ -306,10 +307,23 @@ body textarea:required:valid
 .mfp-wrap ~ *
 	filter: blur(5px)
 
-.carousel-item
-	box-shadow: $accent 0 0 0 5px inset
-
+.carousel-wrap
+	margin-bottom: 25px
+	box-shadow: #d7d7d7 0 0 0 5px inset
+	+mt(.25s)
+	text-align: center
+	background-color: #f8f8f8
+	padding: 0 0 30px
 	&:hover
+		box-shadow: $accent 0 0 0 5px inset
+		background-color: #ebebeb
+		.button
+			background-color: $accent
+			box-shadow: 0 4px 0 darken($accent, 6%)
+			color: #fff
+			&:active, &:focus
+				background-color: darken($accent, 6%)
+				box-shadow: 0 4px 0 darken($accent, 6%)
 		.car-img-wrap
 			svg
 				path
@@ -317,16 +331,139 @@ body textarea:required:valid
 					opacity: 1
 	.car-img-wrap
 		position: relative
-		svg
+		svg, .img-svg
 			position: absolute
-			max-height: 50px
+			max-height: 44px
 			left: 0
 			top: 25px
 			path
-				opacity: .8
+				opacity: .9
 				+mt(.25s)
 				fill: #fff !important
-				
+	h3
+		font-size: em(17px)
+		font-family: "OpenSansBold", sans-serif
+	p
+		font-size: em(13px)
+		color: #444
+		margin-bottom: 20px
+	.carousel-text
+		padding: 0 20px
+	.button
+		margin-top: 20px
+
+.s-equipment
+	h2
+		margin-bottom: 70px
+
+.carousel-eq
+	.carousel-wrap
+		margin: 15px
+	.owl-dots
+		text-align: center
+		margin-top: 25px
+		.owl-dot
+			width: 12px
+			height: 12px
+			background-color: #d7d7d7
+			border-radius: 10em
+			display: inline-block
+			margin: 3px
+			&.active
+				background-color: $accent
+
+.tizer-text
+	font-family: "OpenSansLight", sans-serif
+	font-size: em(19px)
+	margin-bottom: 50px	
+
+.item-vertical-2
+	margin-top: 30px 
+	&:hover
+		.rounded-img-wrap
+			transform: scale(1.15)
+		.iv-phone
+			color: $accent
+
+	text-align: center
+	h3
+		font-size: em(17px)
+		font-family: "OpenSansBold", sans-serif
+		color: #444
+		margin-top: 40px
+		margin-bottom: 10px
+	p
+		font-size: em(13px)
+		color: #666
+		letter-spacing: 2px
+		margin-top: 0
+
+.iv-phone
+	margin-top: 22px
+	color: #999
+	font-family: "Exo2Bold", sans-serif
+	font-size: em(17px)
+	+mt(.5s)
+	i
+		font-size: 19px
+		margin-right: 3px
+
+.rounded-img-wrap
+	border-radius: 10em
+	border: $accent 6px solid
+	overflow: hidden
+	width: 125px
+	height: 125px
+	text-align: center
+	margin: auto
+	+mt(.5s)
+	img
+		max-width: 100%
+
+.s-brands
+	padding: 60px 0
+	h2
+		margin-bottom: 60px
+
+.carousel-brands
+	padding: 0 80px
+	position: relative
+	.owl-controls
+		left: 0
+		top: 0
+		width: 100%
+		position: absolute
+		.owl-nav
+			position: absolute
+			width: 100%
+			top: 0
+			> div
+				position: absolute
+				left: 35px
+				font-size: 34px
+				line-height: 38px
+				color: #9c9c9c
+				transition: all .5s ease
+				&:hover
+					color: $accent
+				&.owl-next
+					right: 35px
+					left: auto
+	
+	.carousel-brand
+		transition: all .5s ease
+		opacity: .5
+		&:hover
+			opacity: .9
+		a, span
+			display: block
+			text-align: center
+			img
+				max-width: 70%
+				max-height: 40px
+				display: inline-block
+
+
 
 
 //ALWAYS END
@@ -336,3 +473,4 @@ body textarea:required:valid
 @import app/libs/animate/animate.sass
 @import app/libs/font-awesome/css/font-awesome.sass
 @import app/libs/Magnific-Popup/magnific-popup.sass
+

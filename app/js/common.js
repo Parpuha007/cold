@@ -1,5 +1,57 @@
-	$(function() {
-		
+$(function() {
+	$(".carousel-brands").owlCarousel({
+		loop:true,
+		margin: 30,
+		nav: true,
+		navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+		responsive:{
+				0:{
+						items:1,
+				},
+				520:{
+						items:1,
+				},
+				560:{
+						items:2,
+				},
+				768:{
+						items:2,
+				},
+				992:{
+						items:3,
+				},
+				1200:{
+						items:4,
+				}
+		}
+	});
+
+	$(".carousel-eq").owlCarousel({
+		loop: true,
+		responsive:{
+			0:{
+				items:1,
+			},
+			560:{
+				items:2,
+			},
+			768:{
+				items:2,
+			},
+			992:{
+				items:3,
+			},
+			1200:{
+				items:4,
+			}
+		}
+	});
+
+
+	$(".carousel-text").equalHeights();
+
+
+	
 	$(".mouse-icon").click(function() {
 		$("html, body").animate({
 			scrollTop : $(".s-adv").offset().top
